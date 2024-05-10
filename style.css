@@ -1,3 +1,8 @@
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
 body{
     margin: 0px;
 }
@@ -50,27 +55,85 @@ body{
     display: flex;
     gap: 40px;
     margin: 20px;
-
     height: 420px;
 }
 
 .container .r{
     width: 30%;
+
     
 }
 
+
+
 .container .l{
     width: 70%;
+    
     
 }
 
 .container .r .rc{
     height: 100%;
-    background-color: aqua;
+    display:flex;
+    flex-direction: column;
+    gap: 4px;
 
 }
 .container .l .lc{
     height: 100%;
-    background-color: blue;
+    border-radius: 3px;
+  
 }
 
+.container .l .lc{
+    background-image: url('res/img/cover.jpg');
+    background-size: cover;
+    
+}
+
+
+
+.container .r .rc .oyun_data{
+    display: flex;
+    align-items:center;
+    justify-content: flex-start;
+    gap: 6px;
+    background-color: rgb(218, 223, 223);
+    border-radius: 3px;
+    padding: 8px;
+  
+
+  
+
+}
+
+
+.container .r .rc .oyun_data:hover{
+    background-color: rgb(102, 100, 100);
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    
+}
+
+.container .r .rc .oyun_data .oyun_img{
+    background-color: aquamarine;
+}
+
+.container .r .rc .oyun_data .oyun_img{
+    width: 64px;
+    height: 64px;
+    background-image: url('res/img/gameic.PNG');
+    background-size: cover;
+    border-radius: 3px;
+
+
+}
+
+.container .r .rc .oyun_data .oyun_text{
+    display: block;
+    flex-direction: column;
+    gap: 0px;
+
+
+
+}
