@@ -1,0 +1,23 @@
+body{
+    margin: 0%;
+}
+.deneme
+{
+    padding: 20px;
+    margin: 20px;
+    background-color: aqua;
+    display: inline ;
+}
+.stil{
+    padding: 10px;
+    margin: 20px;
+    color: blue;
+    margin-top: 100px;
+    float: right;
+    width: 275px;
+    font-size: 130%;
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+    border-top: 1px solid #665544;
+    border-bottom: 1px solid #665544;   
+}
