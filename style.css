@@ -1,23 +1,38 @@
 body{
     margin: 0%;
 }
-.deneme
-{
-    padding: 20px;
+
+.container{
+    display: flex;
+    gap: 40px;
     margin: 20px;
-    background-color: aqua;
-    display: inline ;
+    height: 500px;
 }
-.stil{
-    padding: 10px;
-    margin: 20px;
-    color: blue;
-    margin-top: 100px;
-    float: right;
-    width: 275px;
-    font-size: 130%;
-    font-style: italic;
-    font-family: 'Courier New', Courier, monospace;
-    border-top: 1px solid #665544;
-    border-bottom: 1px solid #665544;   
+
+.container .l{
+    width: 30%;
+    
+
 }
+
+
+.container .r{
+    width: 70%;
+}
+
+
+.container .r .rc{
+    background-color: rebeccapurple;
+    height: 100%;
+}
+
+.container .l .lc{
+    background-color: brown;
+    height: 100%;
+
+}
+
+.container .l img {
+   background-color: azure;
+}
+
