@@ -22,7 +22,7 @@
     color: black;
 }
 .header a.active {
-    background-color: dodgerblue;
+    background-color: silver;
     color: white;
 }
 .header-right {
