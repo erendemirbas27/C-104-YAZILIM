@@ -2,9 +2,11 @@
 *{
     padding: 0px;
     margin: 0px;
+    box-sizing: border-box;
 }
 body{
     margin: 0px;
+    background: rgb(255, 255, 255);
 }
 
 .header{
@@ -55,50 +57,92 @@ body{
     display: flex;
     gap: 40px;
     margin: 20px;
-    height: 420px;
+    height: 450px;
 }
 
-.container .r{
+.container .right-main{
     width: 30%;
 
     
 }
 
 
-
-.container .l{
+.container .left-main{
     width: 70%;
     
     
 }
 
-.container .r .rc{
+.container .right-main .most-played{
     height: 100%;
     display:flex;
     flex-direction: column;
     gap: 4px;
 
 }
-.container .l .lc{
-    height: 100%;
-    border-radius: 3px;
+
+.container .left-main .slideshow-container{
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    
   
 }
 
-.container .l .lc{
-    background-image: url('res/img/cover.jpg');
-    background-size: cover;
+.slide{
+    display: none;
+}
+
+.container .left-main .slideshow-container img{
+    width: 100%;  /* Optional, but ensures image fills container horizontally */
+    height: 100%;
+    object-fit: cover;
+    
+
+   
     
 }
 
 
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 48px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
 
-.container .r .rc .oyun_data{
+
+.prev{
+    left: 3px;
+}
+.next {
+    right: 3px;
+  }
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+.container .right-main .most-played .oyun_data{
     display: flex;
     align-items:center;
     justify-content: flex-start;
     gap: 6px;
-    background-color: rgb(218, 223, 223);
+    background-color:#f1f1f1;
     border-radius: 3px;
     padding: 8px;
   
@@ -108,18 +152,19 @@ body{
 }
 
 
-.container .r .rc .oyun_data:hover{
+.container .right-main .most-played .oyun_data:hover{
     background-color: rgb(102, 100, 100);
     padding: 10px;
     color: rgb(255, 255, 255);
+    cursor: pointer;
     
 }
 
-.container .r .rc .oyun_data .oyun_img{
+.container .right-main .most-played .oyun_data .oyun_img{
     background-color: aquamarine;
 }
 
-.container .r .rc .oyun_data .oyun_img{
+.container .right-main .most-played .oyun_data .oyun_img{
     width: 64px;
     height: 64px;
     background-image: url('res/img/gameic.PNG');
@@ -129,7 +174,7 @@ body{
 
 }
 
-.container .r .rc .oyun_data .oyun_text{
+.container .right-main .most-played .oyun_data .oyun_text{
     display: block;
     flex-direction: column;
     gap: 0px;

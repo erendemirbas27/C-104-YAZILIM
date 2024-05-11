@@ -1,9 +1,12 @@
 <html lang="en">
+<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <title>Game Wiki</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="res/css/style.css">
+    <!-- <script src="res/js/main.js"></script> -->
 </head>
+
 <body>
 
 
@@ -11,8 +14,8 @@
 <div class="header">
     <a href="#default" class="logo">Game Wiki</a>
     <div class="header-right">
-        <a class="active" href="#home">Home</a>
-        <a href="deneme/dsad.html">Contact us</a>
+        <a class="active" href="home.html">Home</a>
+        <a href="contact.html">Contact us</a>
         <a href="about.html">About</a>
     </div>
 </div>
@@ -24,13 +27,31 @@
    
 
 
-    <div class="l"><p style="margin-bottom: 10px;">Yeni Oyunlar</p>
-        <div class="lc"></div>
+    <div class="left-main">
+        <div class="slideshow-container">
+
+            <div class="slide fade">
+            <img src="res/img/cover.jpg" alt="1">
+            </div>
+       
+            <div class="slide fade">
+            <img src="res/img/cover1.jpg" alt="1">
+            </div>
+
+            <div class="slide fade">
+                <img src="res/img/cover2.jpg" alt="1">
+                </div>
+       
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+        
     </div>
 
 
-    <div class="r"><p style="margin-bottom: 10px;">En Çok Oynanan</p>
-        <div class="rc">
+    <div class="right-main"><p style="margin-bottom: 10px; font-weight: bolder;">En Çok Oynanan</p>
+        <div class="most-played">
             
             
             <div class="oyun_data">
@@ -99,4 +120,39 @@
 </div>
     
 </body>
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+
+ 
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+//   alert(1)
+  let i;
+  let slides = document.getElementsByClassName("slide");
+  let dots = document.getElementsByClassName("dot");
+  console.log(n)
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+
+} 
+</script>
+
 </html>
