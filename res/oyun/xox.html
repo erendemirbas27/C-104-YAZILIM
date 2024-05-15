@@ -1,0 +1,133 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <div class="right">
+        <div class="players">
+
+            <div class="p1 player">
+                <p>Player 1</p>
+                <input type="text" placeholder="Player 1">
+                <p class="score">Score:</p>
+    
+            </div>
+    
+            <div class="p2 player">
+                <p>Player 2</p>
+                <input type="text" placeholder="Player 2">
+                <p class="score">Score:</p>
+            </div>
+
+
+        </div>
+        <button>Restart</button>   
+
+
+        <p id="winner_lab" onclick="restart()"></p>
+    </div>
+
+    <table>
+        <tr>
+            <td value = "1" id ="1" class="box" onclick="clikked(this)"></td>
+            <td value = "2" id ="2" class="box" onclick="clikked(this)"></td>
+            <td value = "3" id ="3" class="box" onclick="clikked(this)"></td>
+        </tr>
+        <tr>
+            <td value = "4" id ="4" class="box" onclick="clikked(this)"></td>
+            <td value = "5" id ="5" class="box" onclick="clikked(this)"></td>
+            <td value = "6" id ="6" class="box" onclick="clikked(this)"></td>
+        </tr>
+        <tr>
+            <td value = "7" id ="7" class="box" onclick="clikked(this)"></td>
+            <td value = "8" id ="8" class="box" onclick="clikked(this)"></td>
+            <td value = "9" id ="9" class="box" onclick="clikked(this)"></td>
+        </tr>
+
+
+       
+    </table>
+
+        
+
+
+    
+</body>
+
+
+<script>
+    let playerTurn = "P1";
+    const clickList =[];
+    const winPaths= [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[8,5,2],[9,6,3],[7,5,3],[9,5,1]]
+    const p1 =[];
+    const p2 =[];
+    let winner=false;
+
+
+
+    function restart(){
+        document.getElementsByClassName("box").
+    }
+
+    
+    function clikked(element){
+       let val = element.getAttribute("value");
+    
+        
+        if(!clickList.includes(val) && !winner){
+
+            clickList.push(val);
+        
+
+            if (playerTurn==="P1"){
+                element.innerHTML="X";
+                playerTurn="P2";
+                p1.push(Number(val));
+            }
+
+            else{
+                playerTurn="P1";
+                element.innerHTML="O";
+                p2.push(Number(val));}
+
+            
+         
+            for(i of winPaths){
+                let counter=0;
+            
+                for (j of p1){
+                    if (i.includes(j)){counter+=1;}
+                    if (counter===3){win("Player 1");winner=true;}
+                    
+                }
+                counter=0;
+                for (k of p2){
+                    if (i.includes(k)){counter+=1;}
+                    if (counter===3){win("Player 2");winner=true;}
+
+                }
+               
+            };
+       }
+       
+       
+
+    }
+
+
+
+
+    function win(player){
+        document.getElementById("winner_lab").innerHTML="WINNER IS "+player;
+    }
+
+
+</script>
+
+
+</html>
