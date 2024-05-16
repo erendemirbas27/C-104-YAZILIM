@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,14 +14,14 @@
             <div class="p1 player">
                 <p>Player 1</p>
                 <input type="text" placeholder="Player 1">
-                <p class="score">Score:</p>
+                <p id="p1sc" class="score">Score:</p>
     
             </div>
     
             <div class="p2 player">
                 <p>Player 2</p>
                 <input type="text" placeholder="Player 2">
-                <p class="score">Score:</p>
+                <p id="p2sc" class="score">Score:</p>
             </div>
 
 
@@ -62,19 +62,27 @@
 
 <script>
     let playerTurn = "P1";
-    const clickList =[];
+    var clickList =[];
     const winPaths= [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[8,5,2],[9,6,3],[7,5,3],[9,5,1]]
-    const p1 =[];
-    const p2 =[];
+    var p1 =[];
+    var p2 =[];
     let winner=false;
+    let p1Score=0;
+    let p2Score=0;
 
 
 
     function restart(){
-        
-       let elements= document.getElementsByClassName("box");
-       for (var i = 0; i < elements.length; i++) {
+        let elements= document.getElementsByClassName("box");
+        document.getElementById("winner_lab").innerHTML=""
+        for (var i = 0; i < elements.length; i++) {
         elements[i].innerHTML = "";
+        p1 =[];
+        p2 =[];
+        clickList=[];
+        winner=false;
+        
+
     }
 
     }
@@ -107,13 +115,21 @@
             
                 for (j of p1){
                     if (i.includes(j)){counter+=1;}
-                    if (counter===3){win("Player 1");winner=true;}
+                    if (counter===3){
+                        winner=true;
+                        p1Score+=1;
+                        win("Player 1");
+                    }
                     
                 }
                 counter=0;
                 for (k of p2){
                     if (i.includes(k)){counter+=1;}
-                    if (counter===3){win("Player 2");winner=true;}
+                    if (counter===3){
+                        winner=true;
+                        p2Score+=1;
+                        win("Player 2");
+                    }
 
                 }
                
@@ -124,11 +140,10 @@
 
     }
 
-
-
-
     function win(player){
         document.getElementById("winner_lab").innerHTML="WINNER IS "+player;
+        document.getElementById("p1sc").innerHTML="Score:"+p1Score;
+        document.getElementById("p2sc").innerHTML="Score:"+p2Score;
     }
 
 

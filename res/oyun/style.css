@@ -33,9 +33,12 @@ table td{
     
 }
 
+
+
 td:hover{
     background-color: darkcyan;
     transition: ease 0.5s;
+    cursor: pointer;
 }
 
 
@@ -44,7 +47,7 @@ td:hover{
     display: flex;
     align-self: center;
     justify-content: center;
-    gap: 30px;
+    gap: 50px;
 
 }
 
@@ -55,6 +58,10 @@ td:hover{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: large;
     color: royalblue;
+}
+
+.p2{
+    color: red;
 }
 
 
@@ -69,16 +76,16 @@ td:hover{
 
 button{
     padding: 25px;
-    background-color: rgb(59, 218, 165);
-    border-radius: 4px;
+    background-color: rgb(243, 209, 14);
+    border-radius: 5px;
     border: 0px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     
 }
 button:hover{
    cursor: pointer;
-    background-color: burlywood;
-    transition: ease 0.3s;
+    background-color: rgb(250, 233, 85);
+    transition: ease 0.5s;
 
     
 }
