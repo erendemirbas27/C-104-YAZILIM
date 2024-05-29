@@ -10,16 +10,17 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE 10+ */
-    user-select: none; /* Standard syntax */
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    user-select: none; 
 }
 
 table{
     margin: 20px;
 
 }
+
+
 
 table td{
     width: 175px;
@@ -29,6 +30,7 @@ table td{
     border-radius: 5px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: xx-large;
+    
 
     
 }
@@ -36,10 +38,13 @@ table td{
 
 
 td:hover{
-    background-color: darkcyan;
-    transition: ease 0.5s;
+    background-color: rgb(96, 93, 247);
+    transition: ease 2s;
     cursor: pointer;
+    
 }
+
+
 
 
 .players{
